@@ -1,0 +1,30 @@
+.wrapper {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.good {
+  color: rgb(0, 160, 0);
+}
+
+.neutral {
+  color: rgb(70, 70, 153);
+}
+
+.bad {
+  color: rgb(201, 53, 53);
+}
+
+span {
+  font-weight: 700;
+}

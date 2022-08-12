@@ -16,6 +16,6 @@
   display: flex;
 }
 
-.item:not(:last-child) {
+.option:not(:last-child) {
   margin-right: 16px;
 }

@@ -7,10 +7,8 @@ import { Notification } from './Notification/Notification';
 export class App extends React.Component {
   state = { good: 0, neutral: 0, bad: 0 };
 
-  handleIncrease = evt => {
-    this.setState(prevState => {
-      return { [evt.target.value]: prevState[evt.target.value] + 1 };
-    });
+  handleIncrease = option => {
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
 
   countTotalFeedback = () => {
@@ -25,11 +23,12 @@ export class App extends React.Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const namesArray = Object.keys(this.state);
     return (
       <>
         <Section title="Please, give us your feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            options={namesArray}
             onLeaveFeedback={this.handleIncrease}
           />
         </Section>

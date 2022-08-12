@@ -5,16 +5,19 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
       <ul className={styles.list}>
-        {options.map(item => {
+        {options.map(option => {
           return (
-            <li className={styles.item} key={item}>
+            <li className={styles.option} key={option}>
               <button
                 type="button"
-                value={item}
-                onClick={onLeaveFeedback}
+                value={option}
+                name={option}
+                onClick={() => {
+                  onLeaveFeedback(option);
+                }}
                 className={styles.btn}
               >
-                {item.toUpperCase()}
+                {option.toUpperCase()}
               </button>
             </li>
           );
